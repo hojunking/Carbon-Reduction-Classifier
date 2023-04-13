@@ -2,3 +2,4 @@
 inception_resnet_v2/
 wandb/
 /test_result
+/models
