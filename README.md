@@ -1,5 +1,6 @@
 #### carbon_reduction_project
 develop classification model for carbon reduction project
+##### env: pip install -r requirements.txt
 
 ###### run inference code: python carbon_classifier.py --img_path 'img_path'
 ---
