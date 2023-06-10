@@ -83,7 +83,7 @@ def model_define(category):
         class_num = 2
         model_path = 'mobilenet_v3_pet.pth'
     model = Model('mobilenet_v3_large', class_num, pretrained=True)
-    model.load_state_dict(torch.load('./models/' + model_path))
+    model.load_state_dict(torch.load('./models/' + model_path, map_location=torch.device('cpu')))
     
     return model
 
