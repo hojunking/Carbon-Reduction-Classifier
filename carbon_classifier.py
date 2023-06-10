@@ -2,7 +2,6 @@ import os
 import argparse
 import random
 import numpy as np
-import pandas as pd
 import cv2
 from PIL import Image
 
