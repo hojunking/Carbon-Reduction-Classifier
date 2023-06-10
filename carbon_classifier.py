@@ -1,4 +1,5 @@
 import os
+import argparse
 import random
 import numpy as np
 import pandas as pd
@@ -125,9 +126,15 @@ def decode_category(category, result):
 # RUN INFERENCE
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Description of your script')
+    parser.add_argument('--image_path', type=str)
+    args = parser.parse_args()
+    image_path = args.image_path
+    
+    
     seed_everything(42)
     category = ''
-    image_path = './tst_img/toothcup.jpg' # Load your input images here
+    #image_path = './tst_img/toothcup.jpg' # Load your input images here
     
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = model_define(category)
@@ -155,4 +162,3 @@ if __name__ == '__main__':
         print(f'final classification: {result}')
         
     #print(f'result : {result}')
-
