@@ -3,19 +3,105 @@
 <html>
 <head>
     <title>Image Classifier</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        .jumbotron {
+            background-color: #f8f8f8;
+            padding: 10px;
+            margin-bottom: 30px;
+        }
+        .upload-form {
+            margin-top: 40px;
+            max-width: 600px;
+            text-align: center;
+            align-items: center;
+            margin-left: 130px;
+        }
+        .upload-btn {
+            background-color: #fff;
+            color: #337ab7;
+            border: 2px solid #337ab7;
+            padding: 10px 20px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 20px;
+            padding-left: 15px;
+            padding-right: 15px;
+            width: 170px;
+        }
+        .file-input-wrapper {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+            border-radius: 4px;
+            background-color: #fff;
+            color: #337ab7;
+            border: 2px solid #337ab7;
+            padding: 10px 20px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 20px;
+            padding-left: 15px;
+            margin-left: 30px;
+            width: 170px;
+        }
+        .file-input-wrapper:hover {
+            background-color: #337ab7;
+            color: #fff;
+        }
+        .file-input-wrapper input[type=file] {
+            font-size: 16px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+        .file-input-wrapper span {
+            margin-left: 10px;
+        }
+        .upload-label {
+            font-size: 30px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-right: 60px;
+        }
+
+    </style>
 </head>
 <body>
-    <h1>Upload an Image</h1>
-    <form method="POST" enctype="multipart/form-data">
-        <input type="file" name="image">
-        <input type="submit">
+    <div class="jumbotron text-center">
+        <h1>Ecoce Image Classifier</h1>
+    </div>
+    <form method="POST" enctype="multipart/form-data" class="upload-form">
+        <div class="form-group">
+            <label for="image" class="upload-label">Select an image</label>
+            <br>
+            <br>
+             <div class="button-container">
+                <div class="file-input-wrapper">
+                    <input type="file" name="image" id="image" accept="image/*">
+                    <span>Choose File</span>
+                </div>
+                 <button type="submit" class="btn btn-primary upload-btn">Submit</button>
+            </div>
+        </div>
     </form>
 
+    <br>
     {% if image_loc %}
-    <div>
-        <h1>Prediction: {{ prediction }}</h1>
-        <img src="{{ url_for('static', filename=image_loc) }}" width="500">
+    <div class="text-center">
+        <h2>[Result]<br>{{ prediction }}</h2>
+        <br>
+        <img src="{{ image_loc }}" width="500">
     </div>
     {% endif %}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>
