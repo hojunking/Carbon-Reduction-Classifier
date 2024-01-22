@@ -1,4 +1,5 @@
 #### carbon_reduction_project
+탄소저감이미지분류모델
 develop classification model for carbon reduction project
 ##### env: pip install -r requirements.txt
 
