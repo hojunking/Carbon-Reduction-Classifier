@@ -1,7 +1,9 @@
 ## Carbon-Reduction Activity Image Classification Project
  **Industry-Academic Project (Capstone Design 1 lecture of KNU) for 1st semester of 2023**  
  
- **Team Members: Hojun Song, Jeongwon Cha, Yunhee Koo, Sehyun Park**
+ **Team Members: Hojun Song, Jeongwon Cha, Yunhee Koo, Sehyun Park**  
+
+ **Teamwork via Notion: ()**
 
 
 ### Quick Start
